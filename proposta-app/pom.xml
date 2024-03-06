@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.3</version>
+		<version>3.2.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.andrelima-udemy</groupId>
+	<groupId>com.pieropan</groupId>
 	<artifactId>proposta-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>proposta-app</name>
-	<description>Microsserviço responsável pelo cadastro das propostas</description>
+	<description>Microserviço responsável pelo cadastro das propostas</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -37,6 +37,11 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
