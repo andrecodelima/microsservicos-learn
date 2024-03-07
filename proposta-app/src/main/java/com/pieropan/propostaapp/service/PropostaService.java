@@ -5,10 +5,7 @@ import com.pieropan.propostaapp.dto.PropostaResponseDto;
 
 public class PropostaService {
 
-    public PropostaResponseDto criarProposta(PropostaRequestDto propostaRequestDto){
-
-        // Nesse metodo vamos ter a logica para criar e salvar esse objeto no banco de dados e retorná-lo no response
-
+    public PropostaResponseDto criar(PropostaRequestDto requestDto){
         return null;
     }
 }
