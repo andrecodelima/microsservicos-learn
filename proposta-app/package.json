@@ -34,7 +34,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "commit": "cz"
+    "cmt": "cz"
   },
   "config": {
     "commitizen": {
