@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/andrecodelima/microsservicos-learn/compare/v1.1.0...v1.2.0) (2024-07-11)
+
+
+### Features
+
+* **templates:** index teste ([2c2bf75](https://github.com/andrecodelima/microsservicos-learn/commit/2c2bf759f849206b199302dff0f6b868c8b50b75))
+
 # [1.1.0](https://github.com/andrecodelima/microsservicos-learn/compare/v1.0.0...v1.1.0) (2024-07-11)
 
 
