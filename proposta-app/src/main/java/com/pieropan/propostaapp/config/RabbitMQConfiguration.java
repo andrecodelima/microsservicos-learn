@@ -1,5 +1,9 @@
 package com.pieropan.propostaapp.config;
 
+import org.springframework.amqp.core.Binding;
+import org.springframework.amqp.core.BindingBuilder;
+import org.springframework.amqp.core.ExchangeBuilder;
+import org.springframework.amqp.core.FanoutExchange;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.QueueBuilder;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -52,4 +56,23 @@ public class RabbitMQConfiguration {
 	 *  A configuração a cima é necessária para que se possa criar as filas e exchanges
 	 * */
 	
+	// Exchange
+	@Bean
+	public FanoutExchange criarFanoutExchangePropostaPendente() {
+		return ExchangeBuilder.fanoutExchange("proposta-pendente.ex").build(); // ex de exchange
+	}
+	
+	// Bind da app
+	@Bean
+	public Binding criarBindingPropostaPendenteMsAnaliseCredito() {
+		return BindingBuilder.bind(criarFilaPropostaPendenteMsAnaliseCredito())
+				.to(criarFanoutExchangePropostaPendente());
+	}
+	
+	// Bind da app
+	@Bean
+	public Binding criarBindingPropostaPendenteMsNotificacao() {
+		return BindingBuilder.bind(criarFilaPropostaPendenteMsAnaliseNotificacao())
+				.to(criarFanoutExchangePropostaPendente());
+	}
 }
