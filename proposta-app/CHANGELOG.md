@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/andrecodelima/microsservicos-learn/compare/v1.2.0...v1.3.0) (2024-07-12)
+
+
+### Features
+
+* **main:** cascade e ajuste no Controller ([c51a754](https://github.com/andrecodelima/microsservicos-learn/commit/c51a7549de1235772b3f92b457902297e88162d7)), closes [#123](https://github.com/andrecodelima/microsservicos-learn/issues/123)
+
 # [1.2.0](https://github.com/andrecodelima/microsservicos-learn/compare/v1.1.0...v1.2.0) (2024-07-11)
 
 
