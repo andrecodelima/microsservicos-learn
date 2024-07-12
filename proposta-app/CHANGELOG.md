@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/andrecodelima/microsservicos-learn/compare/v1.5.0...v1.6.0) (2024-07-12)
+
+
+### Features
+
+* **configure:** microsservicos - enviando msg pela aplicacao ([0809c32](https://github.com/andrecodelima/microsservicos-learn/commit/0809c327bc1581f658e799940b284a3b325119f4))
+
 # [1.5.0](https://github.com/andrecodelima/microsservicos-learn/compare/v1.4.0...v1.5.0) (2024-07-12)
 
 
