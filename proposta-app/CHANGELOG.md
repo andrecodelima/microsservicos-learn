@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/andrecodelima/microsservicos-learn/compare/v1.4.0...v1.5.0) (2024-07-12)
+
+
+### Features
+
+* **configure:** microsservicos - 2/2 - criacao de exchanges e binds ([bed5086](https://github.com/andrecodelima/microsservicos-learn/commit/bed50861247c964e10e71568f0189334c7057032)), closes [#123](https://github.com/andrecodelima/microsservicos-learn/issues/123)
+
 # [1.4.0](https://github.com/andrecodelima/microsservicos-learn/compare/v1.3.1...v1.4.0) (2024-07-12)
 
 
