@@ -1,5 +1,8 @@
 package com.pieropan.propostaapp.mapper;
 
+import java.text.NumberFormat;
+import java.util.List;
+
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
@@ -12,6 +15,7 @@ import com.pieropan.propostaapp.entity.Proposta;
 public interface PropostaMapper {
    
 	PropostaMapper INSTANCE =  Mappers.getMapper(PropostaMapper.class);
+	
 	
 	@Mapping(target = "usuario.nome", source = "nome")
 	@Mapping(target = "usuario.sobrenome", source="sobrenome")
@@ -30,6 +34,14 @@ public interface PropostaMapper {
 	@Mapping(target = "telefone", source = "usuario.telefone")
 	@Mapping(target = "cpf", source = "usuario.cpf")
 	@Mapping(target = "renda", source = "usuario.renda")
+	@Mapping(target = "valorSolicitadoFmt", expression = "java(setvalorSolicitadoFmt(proposta))")
 	PropostaResponseDto convertEntityToDto(Proposta proposta);
+	
+	List<PropostaResponseDto> convertListEntityToDto(Iterable<Proposta>proposta);
+	
+	default String setvalorSolicitadoFmt(Proposta proposta) {
+		return NumberFormat.getCurrencyInstance().format(proposta.getValorSolicitado());
+	}
+	
 	
 }

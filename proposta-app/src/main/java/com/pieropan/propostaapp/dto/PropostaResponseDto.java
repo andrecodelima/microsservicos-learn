@@ -1,11 +1,5 @@
 package com.pieropan.propostaapp.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-
 public class PropostaResponseDto {
 
     private Long id;
@@ -20,7 +14,7 @@ public class PropostaResponseDto {
 
     private Double renda;
 
-    private Double valorSolicitado;
+    private String  valorSolicitadoFmt;
 
     private int prazoPagamento;
 
@@ -76,12 +70,13 @@ public class PropostaResponseDto {
 		this.renda = renda;
 	}
 
-	public Double getValorSolicitado() {
-		return valorSolicitado;
+
+	public String getValorSolicitadoFmt() {
+		return valorSolicitadoFmt;
 	}
 
-	public void setValorSolicitado(Double valorSolicitado) {
-		this.valorSolicitado = valorSolicitado;
+	public void setValorSolicitadoFmt(String valorSolicitadoFmt) {
+		this.valorSolicitadoFmt = valorSolicitadoFmt;
 	}
 
 	public int getPrazoPagamento() {
