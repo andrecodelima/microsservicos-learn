@@ -12,20 +12,29 @@ import com.pieropan.propostaapp.repository.PropostaRepository;
 
 import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
 @Service
 public class PropostaService {
 
 	@Autowired
 	private PropostaRepository propostaRepository;
+	private NotificacaoService notificacaoService;
 	
+    @Autowired
+    public PropostaService(PropostaRepository propostaRepository, NotificacaoService notificacaoService) {
+        this.propostaRepository = propostaRepository;
+        this.notificacaoService = notificacaoService;
+    }
+
     public PropostaResponseDto criar(PropostaRequestDto requestDto){
     	
     	//propostaRepository.save(new Proposta());
       Proposta proposta =  PropostaMapper.INSTANCE.convertDtoProposta(requestDto);
       propostaRepository.save(proposta);
       
-    	return PropostaMapper.INSTANCE.convertEntityToDto(proposta);
+      PropostaResponseDto response =  PropostaMapper.INSTANCE.convertEntityToDto(proposta);
+      notificacaoService.notificar(response, "proposta-pendente.ex");
+      
+    	return response;
     }
 
 	public List<PropostaResponseDto> obterProposta() {
