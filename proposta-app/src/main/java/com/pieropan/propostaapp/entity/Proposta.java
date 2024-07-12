@@ -24,7 +24,12 @@ public class Proposta {
 
     private Double observacao;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
+    /*Com essa propriedade resolvemos de forma muito eficiente o erro 
+     * org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : com.pieropan.propostaapp.entity.Proposta.usuario -> com.pieropan.propostaapp.entity.Usuario] with root cause
+     *  Isso porque com ela, o spring salva antes a entidade, nesse caso o usuario.
+     *  */
+    
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 

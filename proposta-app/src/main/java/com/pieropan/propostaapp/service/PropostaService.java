@@ -1,5 +1,6 @@
 package com.pieropan.propostaapp.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.pieropan.propostaapp.dto.PropostaRequestDto;
 import com.pieropan.propostaapp.dto.PropostaResponseDto;
@@ -13,6 +14,7 @@ import lombok.AllArgsConstructor;
 @Service
 public class PropostaService {
 
+	@Autowired
 	private PropostaRepository propostaRepository;
 	
     public PropostaResponseDto criar(PropostaRequestDto requestDto){
