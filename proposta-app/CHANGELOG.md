@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/andrecodelima/microsservicos-learn/compare/v1.3.0...v1.3.1) (2024-07-12)
+
+
+### Bug Fixes
+
+* **mapper:** convertendo valores ([e27e42a](https://github.com/andrecodelima/microsservicos-learn/commit/e27e42a923dfae7091947816c338399439d1b6ac))
+
 # [1.3.0](https://github.com/andrecodelima/microsservicos-learn/compare/v1.2.0...v1.3.0) (2024-07-12)
 
 
