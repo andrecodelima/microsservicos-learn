@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/andrecodelima/microsservicos-learn/compare/v1.3.1...v1.4.0) (2024-07-12)
+
+
+### Features
+
+* **configuration:** microsservicos - 1/2 - criacao das filas ([2cbec3c](https://github.com/andrecodelima/microsservicos-learn/commit/2cbec3c3d9a75aaacd1764e142ff7f85bb1271b1)), closes [#123](https://github.com/andrecodelima/microsservicos-learn/issues/123)
+
 ## [1.3.1](https://github.com/andrecodelima/microsservicos-learn/compare/v1.3.0...v1.3.1) (2024-07-12)
 
 
