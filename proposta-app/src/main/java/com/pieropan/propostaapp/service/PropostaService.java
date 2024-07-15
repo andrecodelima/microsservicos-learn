@@ -3,6 +3,7 @@ package com.pieropan.propostaapp.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import com.pieropan.propostaapp.dto.PropostaRequestDto;
 import com.pieropan.propostaapp.dto.PropostaResponseDto;
@@ -19,6 +20,9 @@ public class PropostaService {
 	private PropostaRepository propostaRepository;
 	private NotificacaoService notificacaoService;
 	
+	@Value("${rabbitmq.propostapendente.exchange}") // subsitui a indicação 'proposta-pendente.ex' em notificacao service.
+	private String exchange;
+	
     @Autowired
     public PropostaService(PropostaRepository propostaRepository, NotificacaoService notificacaoService) {
         this.propostaRepository = propostaRepository;
@@ -32,7 +36,7 @@ public class PropostaService {
       propostaRepository.save(proposta);
       
       PropostaResponseDto response =  PropostaMapper.INSTANCE.convertEntityToDto(proposta);
-      notificacaoService.notificar(response, "proposta-pendente.ex");
+      notificacaoService.notificar(response, exchange);
       
     	return response;
     }
