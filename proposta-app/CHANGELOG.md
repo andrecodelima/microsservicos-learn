@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/andrecodelima/microsservicos-learn/compare/v1.6.1...v1.7.0) (2024-07-15)
+
+
+### Features
+
+* **service:** implementacao de resiliencia ([09aede6](https://github.com/andrecodelima/microsservicos-learn/commit/09aede63bb61830dece0ca092871abe58c168a47))
+
 ## [1.6.1](https://github.com/andrecodelima/microsservicos-learn/compare/v1.6.0...v1.6.1) (2024-07-15)
 
 
