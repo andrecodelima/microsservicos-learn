@@ -18,13 +18,13 @@ public class PropostaService {
 
 	@Autowired
 	private PropostaRepository propostaRepository;
-	private NotificacaoService notificacaoService;
+	private NotificacaoRabbitService notificacaoService;
 	
 	@Value("${rabbitmq.propostapendente.exchange}") // subsitui a indicação 'proposta-pendente.ex' em notificacao service.
 	private String exchange;
 	
     @Autowired
-    public PropostaService(PropostaRepository propostaRepository, NotificacaoService notificacaoService) {
+    public PropostaService(PropostaRepository propostaRepository, NotificacaoRabbitService notificacaoService) {
         this.propostaRepository = propostaRepository;
         this.notificacaoService = notificacaoService;
     }
@@ -35,12 +35,28 @@ public class PropostaService {
       Proposta proposta =  PropostaMapper.INSTANCE.convertDtoProposta(requestDto);
       propostaRepository.save(proposta);
       
-      PropostaResponseDto response =  PropostaMapper.INSTANCE.convertEntityToDto(proposta);
-      notificacaoService.notificar(response, exchange);
+      notificarRabbitMQ(proposta);
       
-    	return response;
+    	return PropostaMapper.INSTANCE.convertEntityToDto(proposta);
     }
 
+    
+    // Verificando se o RabbitMQ está no ar através da notificacao
+    private void notificarRabbitMQ(Proposta proposta) {
+    	
+    	// se o rabbitmq estiver no ar a mensagem vai para o exchange e joga para a fila.
+    	try {
+    		notificacaoService.notificar(proposta, exchange);
+    		
+    		// caso ocorra uma indisponibildade com rabbitmq ele vai lancar uma exceçao
+    	}catch (RuntimeException ex) {
+    		System.err.print("\nRabbitMQ Fora do ar" +  ex+"\n");
+			proposta.setIntegrada(false);
+			propostaRepository.save(proposta);
+		}
+    	
+    }
+    
 	public List<PropostaResponseDto> obterProposta() {
 		
 //		Iterable<Proposta> propostas = propostaRepository.findAll();
