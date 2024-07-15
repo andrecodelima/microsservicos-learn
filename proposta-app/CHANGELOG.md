@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/andrecodelima/microsservicos-learn/compare/v1.6.0...v1.6.1) (2024-07-15)
+
+
+### Bug Fixes
+
+* **properties:** adicao do nome da exchange no properties ([789b489](https://github.com/andrecodelima/microsservicos-learn/commit/789b489b86d523bb5f7facb0d95b1ac1b7f9617d))
+
 # [1.6.0](https://github.com/andrecodelima/microsservicos-learn/compare/v1.5.0...v1.6.0) (2024-07-12)
 
 
